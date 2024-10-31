@@ -1,23 +1,21 @@
 <div class="mt-4">
-  <div class="ml-5">
-    <h1 class="is-uppercase title is-3">AnimeDB</h1>
-  </div>
-
   <div class="mt-5 mx-5">
     <div class="columns is-multiline">
       <% @animes.each do |anime| %>
         <div class="column is-one-fifth">
-          <div class="card">
-            <div class="card-image">
-              <figure class="image is-2by1">
-                <img
-                  src="https://bulma.io/assets/images/placeholders/1280x960.png"
-                  alt="Placeholder image"
-                />
-              </figure>
-            </div>
-              <p class="is-family-monospace	has-text-weight-semibold has-text-centered"><%= anime.title %></p>
-            </div>
+           <%= link_to anime_path(anime) do %>
+            <div class="card">
+              <div class="card-image">
+                <figure class="image is-2by1">
+                  <img
+                    src="https://bulma.io/assets/images/placeholders/1280x960.png"
+                    alt="Placeholder image"
+                  />
+                </figure>
+              </div>
+                <p class="is-family-monospace	has-text-weight-semibold has-text-centered"><%= anime.title %></p>
+              </div>
+              <% end %>
           </div>
       <% end %>
   </div>

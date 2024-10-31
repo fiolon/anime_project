@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
-  get "animes/show"
-  get "animes/index"
+  #get "animes/show"
+  #get "animes/index"
   root "home#index"
+  resources :animes, only: [:index, :show]
   get 'about', to: 'about#about'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
