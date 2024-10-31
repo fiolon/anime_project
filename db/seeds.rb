@@ -4,7 +4,13 @@ AnimeGenre.delete_all
 Genre.delete_all
 Studio.delete_all
 Anime.delete_all
+Page.delete_all
 
+Page.create(
+  title:     "About the API Data",
+  content:   "The API powering this website was provided by a Jikan API, which is an Unofficial MyAnimeList API.",
+  permalink: "about_the_api_data"
+)
 
 (1..200).each do |anime_id|
   response = HTTParty.get("https://api.jikan.moe/v4/anime/#{anime_id}")
