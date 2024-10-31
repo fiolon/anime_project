@@ -19,11 +19,24 @@
   </head>
 
   <body>
-    <header class="mt-4">
-      <div class="ml-5">
-        <h1 class="is-uppercase title is-3"><%= link_to 'AnimeDB', root_path %></h1>
-      </div>
+    <div class="columns">
+    <header class="column mt-4">
+        <div class="ml-5">
+             <h1 class="is-uppercase title is-3"><%= link_to 'AnimeDB', root_path %></h1>
+          </div>
+        </div>
     </header>
+
+    <div class="column">
+      <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class="is-uppercase has-text-weight-medium	navbar-start">
+          <span class="navbar-item"><%= link_to 'Home', root_path %></span>
+          <span class="navbar-item"><%= link_to 'All Animes', animes_path %></span>
+          <span class="navbar-item"><%= link_to 'About', about_path %></span>
+        </div>
+      </nav>
+    </div>
+    </div>
     <%= yield %>
   </body>
 </html>
