@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_10_30_145032) do
+ActiveRecord::Schema[7.2].define(version: 2024_10_31_043452) do
+  create_table "anime_genres", force: :cascade do |t|
+    t.integer "anime_id", null: false
+    t.integer "genre_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["anime_id"], name: "index_anime_genres_on_anime_id"
+    t.index ["genre_id"], name: "index_anime_genres_on_genre_id"
+  end
+
   create_table "animes", force: :cascade do |t|
     t.string "title"
     t.text "synopsis"
@@ -22,11 +31,19 @@ ActiveRecord::Schema[7.2].define(version: 2024_10_30_145032) do
     t.index ["studio_id"], name: "index_animes_on_studio_id"
   end
 
+  create_table "genres", force: :cascade do |t|
+    t.string "genre_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "studios", force: :cascade do |t|
     t.string "studio_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "anime_genres", "animes"
+  add_foreign_key "anime_genres", "genres"
   add_foreign_key "animes", "studios"
 end
