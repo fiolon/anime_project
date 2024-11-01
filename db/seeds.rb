@@ -21,6 +21,7 @@ Studio.delete_all
       Genre.find_or_create_by(genre_name: genre['name'])
     end
 
+    # Extract anime data from API
     anime = Anime.create(
       title: anime_data['title'],
       synopsis: anime_data['synopsis'],
@@ -40,3 +41,4 @@ end
 puts "Created #{Genre.count} Genres"
 puts "Created #{Studio.count} Studios"
 puts "Created #{Anime.count} Animes"
+puts "Created #{AnimeGenre.count} AnimeGenres"
