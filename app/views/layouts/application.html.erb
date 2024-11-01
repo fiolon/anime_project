@@ -28,6 +28,14 @@
 
         <div class="navbar-end">
           <div class="navbar-item">
+            <div class="select is-rounded">
+              <select onchange="location = this.value;">
+                  <option disabled selected>Select Genre</option>
+                <% @genres.each do |genre| %>
+                  <option value="<%= genre_path(genre) %>"><%= genre.genre_name %></option>
+                <% end %>
+              </select>
+            </div>
             <%= form_with url: search_animes_path, method: :get, local: true do |form| %>
               <div class="field has-addons">
                 <div class="control">
