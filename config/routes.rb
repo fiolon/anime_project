@@ -1,12 +1,8 @@
 Rails.application.routes.draw do
-  get "genres/index"
-  get "genres/show"
-  get "studios/index"
-  get "studios/show"
-  #get "animes/show"
-  #get "animes/index"
   root "home#index"
   resources :animes, only: [:index, :show]
+  resources :genres, only: [:index, :show]
+  resources :studios, only: [:index, :show]
   get 'about', to: 'about#about'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

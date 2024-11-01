@@ -1,2 +1,8 @@
-<h1>Genres#show</h1>
-<p>Find me in app/views/genres/show.html.erb</p>
+<div class="mt-2 ml-5">
+  <h1 class="title is-3"><%= @genre.genre_name %> Animes</h1>
+  <ul>
+    <% @animes.each do |anime| %>
+      <li class="subtitle is-5"><%= link_to anime.title, anime %></li>
+    <% end %>
+  </ul>
+</div>
