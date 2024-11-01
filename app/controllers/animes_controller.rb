@@ -4,7 +4,7 @@ class AnimesController < ApplicationController
   end
 
   def index
-    @animes = Anime.includes(:studio).order("title DESC")
+    @animes = Anime.includes(:studio).order("title ASC")
   end
 
   def search

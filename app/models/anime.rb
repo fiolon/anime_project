@@ -3,6 +3,12 @@ class Anime < ApplicationRecord
   has_many :anime_genres
   has_many :genres, through: :anime_genres
 
+  def genres_list
+    genres.map do |genre|
+    ApplicationController.helpers.link_to(genre.genre_name, Rails.application.routes.url_helpers.genre_path(genre))
+    end.join(", ").html_safe
+  end
+
   validates :title, presence: true, uniqueness: true
   validates :synopsis, presence: true, length: { maximum: 1000 }
   validates :score, presence: true, numericality: { greater_than_or_equal_to: 0, less_than_or_equal_to: 10 }

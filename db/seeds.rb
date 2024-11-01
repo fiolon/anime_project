@@ -27,7 +27,8 @@ Studio.delete_all
       synopsis: anime_data['synopsis'],
       score: anime_data['score'],
       year: anime_data['year'],
-      studio: studio
+      studio: studio,
+      url_image: anime_data['images']['jpg']['image_url']
     )
 
     anime.genres << genre_records

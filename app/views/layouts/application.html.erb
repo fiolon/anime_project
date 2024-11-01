@@ -4,6 +4,7 @@
     <title><%= content_for(:title) || "Anime Project" %></title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
   </head>
 
@@ -19,6 +20,7 @@
       <nav class="navbar" role="navigation" aria-label="main navigation">
         <div class="navbar-start is-uppercase has-text-weight-medium">
           <span class="navbar-item"><%= link_to 'Home', root_path, class: 'has-text-light' %></span>
+          <span class="navbar-item"><%= link_to 'All Animes', animes_path, class: 'has-text-light' %></span>
           <span class="navbar-item"><%= link_to 'Genres', genres_path, class: 'has-text-light' %></span>
           <span class="navbar-item"><%= link_to 'Studios', studios_path, class: 'has-text-light' %></span>
           <span class="navbar-item"><%= link_to 'About', about_path, class: 'has-text-light' %></span>
