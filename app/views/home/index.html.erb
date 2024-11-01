@@ -3,26 +3,30 @@
     <h1 class="has-text-centered title is-4">Highest Rated Animes</h1>
   </div>
 
-  <div class="mt-5 mx-5">
-    <div class="columns is-multiline">
-      <% @animes.each do |anime| %>
-        <div class="column is-one-fifth">
-           <%= link_to anime_path(anime) do %>
-            <div class="card">
-              <div class="card-image">
-                <figure class="image is-2by1">
-                  <img
-                    src="<%= anime.url_image %>"
-                    alt="<%= anime.title %>"
-                  />
-                </figure>
-              </div>
-                <p class="is-family-monospace	has-text-weight-semibold has-text-centered"><%= anime.title %></p>
-              </div>
-              <% end %>
-          </div>
-      <% end %>
+    <div class="mt-5 mx-5">
+      <div class="columns is-multiline">
+        <% @animes.each do |anime| %>
+          <div class="column is-one-fifth">
+            <%= link_to anime_path(anime) do %>
+              <div class="card">
+                <div class="card-image">
+                  <figure class="image is-2by1">
+                    <img
+                      src="<%= anime.url_image %>"
+                      alt="<%= anime.title %>"
+                    />
+                  </figure>
+                </div>
+                  <p class="is-family-monospace	has-text-weight-semibold has-text-centered"><%= anime.title %></p>
+                </div>
+                <% end %>
+            </div>
+        <% end %>
+      </div>
     </div>
+
+  <div class="pagination-links mt-5 has-text-centered">
+    <%= paginate @animes %>
   </div>
-</div>>
+</div>
 

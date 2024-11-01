@@ -4,7 +4,7 @@ class AnimesController < ApplicationController
   end
 
   def index
-    @animes = Anime.includes(:studio).order("title ASC")
+    @animes = Anime.includes(:studio).order("title ASC").page(params[:page]).per(20)
   end
 
   def search
