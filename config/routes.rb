@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
   root "home#index"
-  resources :animes, only: [:index, :show]
+
+  resources :animes, only: [:index, :show] do
+    collection do
+      get 'search'
+    end
+  end
+
   resources :genres, only: [:index, :show]
   resources :studios, only: [:index, :show]
   get 'about', to: 'about#about'
